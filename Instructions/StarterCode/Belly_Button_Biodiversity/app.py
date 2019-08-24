@@ -13,6 +13,33 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
+# Github flagged the following vulnerabilities which were updated on my local machine:
+# Jinja2
+# #CVE-2019-10906 More information
+# high severity
+# Vulnerable versions: < 2.10.1
+# Patched version: 2.10.1
+# In Pallets Jinja before 2.10.1, str.format_map allows a sandbox escape.
+#
+# SQLAlchemy
+# CVE-2019-7164 More information
+# moderate severity
+# Vulnerable versions: < 1.3.0
+# Patched version: 1.3.0
+# SQLAlchemy through 1.2.17 and 1.3.x through 1.3.0b2 allows SQL Injection via the order_by parameter.
+# and..
+# CVE-2019-7548 More information
+# moderate severity
+# Vulnerable versions: < 1.3.0
+# Patched version: 1.3.0
+# SQLAlchemy 1.2.17 has SQL Injection when the group_by parameter can be controlled.
+# 
+# Werkzeug
+# CVE-2019-14806 More information
+# high severity
+# Vulnerable versions: < 0.15.3
+# Patched version: 0.15.3
+# Pallets Werkzeug before 0.15.3, when used with Docker, has insufficient debugger PIN randomness because Docker containers share the same machine id.
 
 #################################################
 # Database Setup

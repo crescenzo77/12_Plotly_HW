@@ -111,6 +111,8 @@ function init() {
 
 function optionChanged(newSample) {
   // Fetch new data each time a new sample is selected
+  // what is wrong with this code? It won't refresh the plots when a new sample is selected after the second or third selection.
+  // requires the page to be reloaded in order to make a new bubbe plot.  for some reason the old bubbleplot remains static on the screen, and a single new bubble populates over the old plot
   buildCharts(newSample);
   buildMetadata(newSample);
 }
