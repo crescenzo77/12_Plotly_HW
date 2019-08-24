@@ -32,11 +32,8 @@ function buildMetadata(sample) {
 
     // BONUS: Build the Gauge Chart
     // buildGauge(data.WFREQ);
-
-// } zomg, this bracket drove me mad. I bet I would have caught it sooner had i done the bonus...
-
-
-
+    //not gonna happen...
+    
 
 function buildCharts(sample) {
 

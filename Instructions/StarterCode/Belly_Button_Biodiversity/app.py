@@ -88,7 +88,7 @@ def sample_metadata(sample):
 
 @app.route("/samples/<sample>")
 def samples(sample):
-    """Return `otu_ids`, `otu_labels`,and `sample_values`."""
+    """Return `otu_ids`, `otu_labels`,and `sampled_values`."""
     stmt = db.session.query(Samples).statement
     df = pd.read_sql_query(stmt, db.session.bind)
 
@@ -98,7 +98,7 @@ def samples(sample):
     # Format the data to send as json
     data = {
         "otu_ids": sample_data.otu_id.values.tolist(),
-        "sample_values": sample_data[sample].values.tolist(),
+        "sampled_values": sample_data[sample].values.tolist(),
         "otu_labels": sample_data.otu_label.tolist(),
     }
     return jsonify(data)
